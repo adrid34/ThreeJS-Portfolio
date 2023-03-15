@@ -21,6 +21,14 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const handleChange = function(e) {
+
+  }
+
+  const handleSubmit = function(e) {
+    
+  }
+
   return (
 
     <div>Contact</div>
