@@ -7,6 +7,7 @@ import { SectionWrap } from '../hoc';
 import { slideIn } from '../utilities/motion'
 
 
+
 const Contact = () => {
 
   const [form, setForm] = useState({
@@ -22,12 +23,42 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = function(e) {
+    
+    const {name, value} = e.target;
+
+    setForm( { ...form, [name]: value } )
 
   }
 
   const handleSubmit = function(e) {
 
-  }
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs.send('service_zzxbh9f', 'template_dv153nd', 
+    {
+      from_name: form.name,
+      to_name: 'Kamil',
+      from_email: form.email,
+      to_email: 'kamil.ismayilzade.2016@gmail.com',
+      message: form.message,
+    }, 'jSjJKw5jUtrkfcfdR').then( ()=> {
+
+      setLoading(false);
+      alert('Thank you for your message. I will review your message and get back to you as soon as possible.');
+      setForm({
+        name: '',
+        email: '',
+        message: '',
+      })
+
+    }, (err)=> {
+      setLoading(false);
+      console.log(err);
+      alert('Something went wrong. Please try again!')
+    } )
+
+  } 
 
   return (
 
