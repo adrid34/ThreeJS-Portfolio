@@ -87,11 +87,29 @@ Install devDependencies
   npm install -D tailwindcss
   npx tailwindcss init
   npm install -D tailwindcss postcss autoprefixer
+  npm create vite@latest
 ```
 
 Start the server
 
 ```bash
-  npm run start
+  npm run dev
 ```
+
+
+## Tech Stack
+
+**Client:** *****React*****, *****ThreeJs*****, *****TailwindCSS*****
+
+**Server:** *****N/A*****
+
+
+## Feedback
+
+If you have any feedback, please reach out to me at *****kamil.ismayilzade.2016@gmail.com*****
+
+
+## Screenshots
+
+![Screenshot (8)](https://user-images.githubusercontent.com/84046930/226104139-5b6c1212-01e0-4263-a400-f821993cd812.png)
 
