@@ -38,9 +38,9 @@ const Contact = () => {
     emailjs.send('service_zzxbh9f', 'template_dv153nd', 
     {
       from_name: form.name,
-      to_name: 'Kamil',
+      to_name: 'Adrian',
       from_email: form.email,
-      to_email: 'kamil.ismayilzade.2016@gmail.com',
+      to_email: 'adrianmadrid5245@gmail.com',
       message: form.message,
     }, 'jSjJKw5jUtrkfcfdR').then( ()=> {
 
