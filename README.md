@@ -6,7 +6,7 @@
 
 ## Authors
 
-- [@Kamilismayilzade](https://www.github.com/Kamilismayilzade)
+- [@AdrianMadrid](https://www.github.com/Adrid34)
 
 
 ## Documentation
@@ -57,7 +57,7 @@ This personal portfolio website is a showcase of the creator's work and experien
 Clone the project
 
 ```bash
-  git clone https://github.com/Kamilismayilzade/personal-portfolio-react-threejs
+  git clone https://github.com/adrid34/ThreeJS-portfolio.git
 ```
 
 Go to the project directory
