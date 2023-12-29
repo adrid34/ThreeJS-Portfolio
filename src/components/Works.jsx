@@ -73,8 +73,8 @@ const Works = () => {
           <ProjectCard key={`project-${i}`} {...project} i={i} />
         ))}
       </div>
-      <p className={` ${styles.sectionSubText} 2xl:mt-0 mt-2`} >Want to see more? Refer to my <a className='font-bold underline text-[20px] cursor-pointer' onClick={ ()=> window.open('https://github.com/Adrid34?tab=repositories', '_blank') } >Github.</a> </p>
 
+      <p className={` ${styles.sectionSubText} 2xl:mt-0 mt-2`} >Want to see more? Refer to my <a className='font-bold underline text-[20px] cursor-pointer' onClick={ ()=> window.open('https://github.com/Kamilismayilzade?tab=repositories', '_blank') } >Github.</a> </p>
 
     </>
 

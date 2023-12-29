@@ -24,7 +24,7 @@ function App() {
             <StarsCanvas />
           </div>
 
-          <footer className='text-[10px] p-1 opacity-80'>&#169; Adrian Madrid</footer>
+          <footer className='text-[10px] p-1 opacity-80'>&#169; Kamil Ismayilzada</footer>
         </div>
     </BrowserRouter>
 
