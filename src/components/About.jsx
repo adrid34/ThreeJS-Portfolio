@@ -16,7 +16,7 @@ const ServiceCard = ({ title, i, icon }) => {
 
       <motion.div variants={fadeIn('right', 'spring', 0.5 * i, 0.75)} className='w-full p-[1px] rounded-[20px] shadow-card ' >
 
-        <div options={{ max: 45, scale: 1, speed: 450, }} className='px-12 py-5 min-h-[280px] rounded-[20px] flex flex-col justify-evenly items-center bg-[#ECF0F1]' >
+        <div options={{ max: 45, scale: 1, speed: 550, }} className='px-12 py-5 min-h-[280px] rounded-[20px] flex flex-col justify-evenly items-center bg-[#ECF0F1]' >
           <img src={icon} alt={title} className='w-32 h-32 object-contain' />
           <h3 className='text-center text-[20px]'> {title} </h3>
         </div>

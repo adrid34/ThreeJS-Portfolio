@@ -1,7 +1,7 @@
 import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 import React, { useRef, useState } from 'react'
-import {styles} from '../styles'
+import { styles } from '../styles'
 import { EarthCanvas } from './canvas'
 import { SectionWrap } from '../hoc';
 import { slideIn } from '../utilities/motion'
@@ -22,68 +22,67 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = function(e) {
-    
-    const {name, value} = e.target;
+  const handleChange = function (e) {
 
-    setForm( { ...form, [name]: value } )
+    const { name, value } = e.target;
+
+    setForm({ ...form, [name]: value })
 
   }
 
-  const handleSubmit = function(e) {
+  const handleSubmit = function (e) {
 
     e.preventDefault();
     setLoading(true);
 
-    emailjs.send('service_zzxbh9f', 'template_dv153nd', 
-    {
-      from_name: form.name,
-      to_name: 'Adrian',
-      from_email: form.email,
-      to_email: 'adrianmadrid5245@gmail.com',
-      message: form.message,
-    }, 'jSjJKw5jUtrkfcfdR').then( ()=> {
+    emailjs.send('service_0yrmqau', 'template_bbevxsc',
+      {
+        from_name: form.name,
+        to_name: 'Adrian',
+        from_email: form.email,
+        to_email: 'adrianmadrid5245@gmail.com',
+        message: form.message,
+      }, 'KUGrPlumm-y65WMWA').then(() => {
 
-      setLoading(false);
-      alert('Thank you for your message. I will review your message and get back to you as soon as possible.');
-      setForm({
-        name: '',
-        email: '',
-        message: '',
+        setLoading(false);
+        alert('Thank you for your message. I will review your message and get back to you as soon as possible.');
+        setForm({
+          name: '',
+          email: '',
+          message: '',
+        })
+
+      }, (err) => {
+        setLoading(false);
+        alert('Something went wrong. Please try again!')
       })
 
-    }, (err)=> {
-      setLoading(false);
-      console.log(err);
-      alert('Something went wrong. Please try again!')
-    } )
-
-  } 
+  }
 
   return (
 
     <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
 
-      <motion.div variants={ slideIn('left', 'tween', 0.2, 1) } className='flex-[0.75] p-8 rounded-2xl bg-[#ECF0F1] shadow-card' >
-        
+      <motion.div variants={slideIn('left', 'tween', 0.2, 1)} style={{ margin: 20 }} className='flex-[0.75] p-8 rounded-2xl bg-[#ECF0F1] shadow-card' >
+
         <p className={styles.sectionSubText} >Get in touch</p>
         <h3 className={styles.sectionHeadText} >Contact.</h3>
 
-        <form ref={formRef} onSubmit={ handleSubmit } className='mt-12 flex flex-col gap-8' >
+        <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8' >
 
           <label className='flex flex-col'>
             <span className='mb-4 font-medium'>Your name</span>
-            <input type="text" name='name' value={form.name} placeholder="What's your name?" onChange={ handleChange } className='py-4 px-6 bg-transparent rounded-lg outline-none border-none shadow-input' />
+            <input type="text" name='name' value={form.name} placeholder="What's your name?" onChange={handleChange} className='py-4 px-6 bg-transparent rounded-lg outline-none border-none shadow-input' />
           </label>
 
           <label className='flex flex-col'>
             <span className='mb-4 font-medium'>Your email</span>
-            <input type="email" name='email' value={form.email} placeholder="What's your email?" onChange={ handleChange } className='py-4 px-6 bg-transparent rounded-lg outline-none border-none shadow-input' />
+            <input type="email" name='email' value={form.email} placeholder="What's your email?" onChange={handleChange} className='py-4 px-6 bg-transparent rounded-lg outline-none border-none shadow-input' />
           </label>
 
           <label className='flex flex-col'>
             <span className='mb-4 font-medium'>Your message</span>
-            <textarea rows={6} type="text" name='message' value={form.message} placeholder="What's your message to me?" onChange={ handleChange } className='py-4 px-6 bg-transparent rounded-lg outline-none border-none shadow-input' />
+            <textarea rows={6} type="text" name='message' value={form.message} placeholder="What's your message to me?" onChange={handleChange} className='py-4 px-6 bg-transparent rounded-lg outline-none border-none shadow-input' />
           </label>
 
           <button type='submit' className='py-3 px-10 outline-none w-fit font-medium shadow-input rounded-xl'>
@@ -94,7 +93,7 @@ const Contact = () => {
 
       </motion.div>
 
-      <motion.div variants={ slideIn('right', 'tween', 0.2, 1) } className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px] ' >
+      <motion.div variants={slideIn('right', 'tween', 0.2, 1)} className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px] ' >
 
         <EarthCanvas />
 

@@ -26,11 +26,14 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import office from "./company/office.png";
+import ledgent from "./company/ledgent.png";
+import amazon from "./company/amazon.png";
+import avco from "./company/avco.png";
+import mobile from "./company/mobile.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
-
 
 import forkify from "./forkify.png";
 import socialmedia from "./socialmedia.png";
@@ -63,6 +66,10 @@ export {
   starbucks,
   tesla,
   office,
+  ledgent,
+  amazon,
+  avco,
+  mobile,
   carrent,
   jobit,
   tripguide,

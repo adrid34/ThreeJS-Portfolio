@@ -6,15 +6,15 @@ import CanvasLoader from '../Loader'
 
 const SoullesFace = ({ isMobile }) => {
 
-  const soul = useGLTF('./bm86_portable_pc/scene.gltf');
+  const soul = useGLTF('./sci-fi_computer/scene.gltf');
 
   return (
-    
+
     <mesh>
       <hemisphereLight intensity={0.15} groundColor='black' />
-      <pointLight intensity={1} />
-      <spotLight position={[ -20, 50, 10 ]} angle={0.12} penumbra={1} intensity={1} castShadow shadow-mapSize={1024} />
-      <primitive object={soul.scene} scale={ isMobile ? 8 : 12} position={ isMobile ? [0, -3, -2.2] : [ 0, -3.25, -1.5 ]} rotation={[ -0.01, -0.2, -0.1 ]} />
+      <pointLight position={[-20, 50, -50]} intensity={1} />
+      <pointLight position={[20, -50, 50]} intensity={1} />
+      <primitive object={soul.scene} scale={isMobile ? 1.6 : 2.8} position={isMobile ? [0, -3.5, 0.2] : [0, -0.5, 0.2]} />
     </mesh>
 
   )
@@ -25,20 +25,19 @@ const SoulCanvas = () => {
 
   const [isMobile, setIsMobile] = useState(false);
 
-  useEffect( ()=> {
+  useEffect(() => {
 
     const mediaQuery = window.matchMedia('(max-width: 500px)');
-
     setIsMobile(mediaQuery.matches);
 
-    const handleMediaQueryChange = function(e) {
+    const handleMediaQueryChange = function (e) {
 
       setIsMobile(e.matches);
 
     }
 
     mediaQuery.addEventListener('change', handleMediaQueryChange);
-    
+
     return () => { mediaQuery.removeEventListener('change', handleMediaQueryChange); }
 
   }, [])
@@ -47,11 +46,18 @@ const SoulCanvas = () => {
 
   return (
 
-    <Canvas frameloop='demand' shadows camera={{ position: [20, 3, 5], fov: 25 }} gl={{ preserveDrawingBuffer: true }}>
-      
-      <Suspense fallback={ <CanvasLoader /> }>
-        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
-        <SoullesFace isMobile = {isMobile} />
+    <Canvas style={{ marginLeft: isMobile ? 0 : '30%', width: isMobile ? '100%' : '70%' }} frameloop='demand' shadows camera={{ position: [20, 3, 5], fov: 25 }} gl={{ preserveDrawingBuffer: false }}>
+
+      <Suspense fallback={<CanvasLoader />} >
+        <OrbitControls
+          enableZoom={false}
+          maxZoom={[1]}
+          autoRotate={true}
+          autoRotateSpeed={8}
+          enableRotate={true}
+          maxPolarAngle={Math.PI / 10}
+          minPolarAngle={Math.PI * 2 / 5} />
+        <SoullesFace isMobile={isMobile} />
       </Suspense>
 
       <Preload all />
