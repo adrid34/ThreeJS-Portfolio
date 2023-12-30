@@ -14,7 +14,7 @@ const SoullesFace = ({ isMobile }) => {
       <hemisphereLight intensity={0.15} groundColor='black' />
       <pointLight position={[-20, 50, -50]} intensity={1} />
       <pointLight position={[20, -50, 50]} intensity={1} />
-      <primitive object={soul.scene} scale={isMobile ? 1.6 : 2.8} position={isMobile ? [0, -3.5, 0.2] : [0, -0.5, 0.2]} />
+      <primitive object={soul.scene} scale={isMobile ? 1.6 : 2.8} position={isMobile ? [0, -2, 0.2] : [0, -0.5, 0.2]} />
     </mesh>
 
   )
@@ -27,7 +27,7 @@ const SoulCanvas = () => {
 
   useEffect(() => {
 
-    const mediaQuery = window.matchMedia('(max-width: 500px)');
+    const mediaQuery = window.matchMedia('(max-width: 700px)');
     setIsMobile(mediaQuery.matches);
 
     const handleMediaQueryChange = function (e) {
