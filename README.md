@@ -103,11 +103,3 @@ Start the server
 
 **Server:** *****N/A*****
 
-
-## Feedback
-
-
-## Screenshots
-
-![Screenshot (8)](https://user-images.githubusercontent.com/84046930/226104139-5b6c1212-01e0-4263-a400-f821993cd812.png)
-
