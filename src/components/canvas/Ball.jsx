@@ -23,21 +23,21 @@ const Ball = (props) => {
 }
 
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = ({ icon, name }) => {
 
   return (
+    <>
+      <Canvas frameloop='demand' gl={{ preserveDrawingBuffer: true }}>
 
-    <Canvas frameloop='demand' gl={{ preserveDrawingBuffer: true }}>
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls enableZoom={false} />
+          <Ball imgUrl={icon} />
+        </Suspense>
 
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
-        <Ball imgUrl={icon} />
-      </Suspense>
+        <Preload all />
+      </Canvas>
 
-      <Preload all />
-
-    </Canvas>
-
+      <p className='flex justify-center font-bold'>{name}</p></>
   )
 
 }
