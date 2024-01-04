@@ -37,7 +37,7 @@ const BallCanvas = ({ icon, name }) => {
         <Preload all />
       </Canvas>
 
-      <p className='flex justify-center font-bold'>{name}</p></>
+      <p className='flex justify-center font-bold lightskyblue' style={{ color: 'darkblue' }}>{name}</p></>
   )
 
 }
