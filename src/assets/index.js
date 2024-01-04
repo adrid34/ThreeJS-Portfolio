@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import jsdev from "./jsdev.png";
 import tsdev from "./tsdev.png";
 import reactdev from "./reactdev.png";
